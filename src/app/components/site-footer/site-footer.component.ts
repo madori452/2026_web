@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AppLang } from '../../services/language.service';
 
 @Component({
   selector: 'app-site-footer',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './site-footer.component.scss',
 })
 export class SiteFooterComponent {
+  @Input() lang: AppLang = 'zh';
   year = '2026';
+
+  get contactLabel(): string {
+    return this.lang === 'zh' ? '聯絡我' : 'Contact Me';
+  }
 }

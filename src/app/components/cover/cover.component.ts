@@ -6,8 +6,10 @@ import {
   ViewChild,
   Inject,
   PLATFORM_ID,
+  Input,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { AppLang } from '../../services/language.service';
 
 @Component({
   selector: 'app-cover',
@@ -17,11 +19,36 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './cover.component.scss',
 })
 export class CoverComponent implements AfterViewInit, OnDestroy {
+  @Input() lang: AppLang = 'zh';
   @ViewChild('heroSection') heroSection!: ElementRef<HTMLElement>;
 
   private observer!: IntersectionObserver;
 
+  private readonly textMap: Record<
+    AppLang,
+    { descriptionLines: string[]; downloadResume: string }
+  > = {
+    zh: {
+      descriptionLines: [
+        '有2年以上前端工程經驗,',
+        '具備使用者體驗概念以及美感的前端工程師',
+      ],
+      downloadResume: '下載履歷',
+    },
+    en: {
+      descriptionLines: [
+        'Frontend engineer with 2+ years of experience,',
+        'focused on user experience and visual quality.',
+      ],
+      downloadResume: 'Download Resume',
+    },
+  };
+
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
+  get text() {
+    return this.textMap[this.lang];
+  }
 
   ngAfterViewInit(): void {
     if (!isPlatformBrowser(this.platformId)) return;

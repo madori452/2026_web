@@ -7,6 +7,7 @@ import { SkillsComponent } from '../../components/skills/skills.component';
 import { WorksComponent } from '../../components/works/works.component';
 import { SiteFooterComponent } from '../../components/site-footer/site-footer.component';
 import { FutureComponent } from '../../components/future/future.component';
+import { AppLang, LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-home',
@@ -24,4 +25,10 @@ import { FutureComponent } from '../../components/future/future.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  constructor(private languageService: LanguageService) {}
+
+  get lang(): AppLang {
+    return this.languageService.lang;
+  }
+}

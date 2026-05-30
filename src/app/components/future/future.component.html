@@ -1,10 +1,10 @@
 <div class="mx-auto w-full max-w-6xl px-6 bg-future">
   <div class="text-center">
-    <h2 class="text-3xl font-semibold">關於未來</h2>
+    <h2 class="text-3xl font-semibold">{{ text.title }}</h2>
     <p class="mt-4 text-md leading-6 text-gray-600">
-      這些年持續投入於前端系統開發，從介面實作到系統整合，累積了實務經驗與對產品穩定性的重視。
+      {{ text.body[0] }}
       <br />
-      未來期望持續精進前端架構、效能與使用者體驗，在團隊中創造長期且可維護的價值。
+      {{ text.body[1] }}
     </p>
   </div>
 </div>

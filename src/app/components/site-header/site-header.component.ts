@@ -1,11 +1,6 @@
-import {
-  Component,
-  HostListener,
-  OnInit,
-  inject,
-  PLATFORM_ID,
-} from '@angular/core';
+import { Component, HostListener, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { AppLang, LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-site-header',
@@ -14,20 +9,34 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class SiteHeaderComponent {
   private platformId = inject(PLATFORM_ID);
+  private languageService = inject(LanguageService);
   private readonly sectionIds = ['experience', 'skills', 'works'];
 
-  lang: 'zh' | 'en' = 'zh';
   activeSection = 'experience';
-  navItems = [
-    { id: 'experience', label: '工作經歷' },
-    { id: 'skills', label: '技能' },
-    { id: 'works', label: '作品集' },
-  ];
+  private readonly navLabels: Record<AppLang, { id: string; label: string }[]> =
+    {
+      zh: [
+        { id: 'experience', label: '工作經歷' },
+        { id: 'skills', label: '技能' },
+        { id: 'works', label: '作品集' },
+      ],
+      en: [
+        { id: 'experience', label: 'Experience' },
+        { id: 'skills', label: 'Skills' },
+        { id: 'works', label: 'Projects' },
+      ],
+    };
+
+  get lang(): AppLang {
+    return this.languageService.lang;
+  }
+
+  get navItems() {
+    return this.navLabels[this.lang];
+  }
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      const saved = localStorage.getItem('lang') as 'zh' | 'en' | null;
-      if (saved) this.lang = saved;
       this.updateActiveSection();
     }
   }
@@ -40,11 +49,7 @@ export class SiteHeaderComponent {
   }
 
   toggleLang() {
-    this.lang = this.lang === 'zh' ? 'en' : 'zh';
-
-    if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('lang', this.lang);
-    }
+    this.languageService.toggleLang();
   }
 
   private updateActiveSection() {

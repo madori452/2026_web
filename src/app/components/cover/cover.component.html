@@ -1,7 +1,5 @@
-<section #heroSection class="relative overflow-hidden">
-  <div
-    class="relative mx-auto px-4 py-24 md:py-28 bg-cover h-[600px] flex items-center"
-  >
+<section #heroSection class="relative">
+  <div class="relative mx-auto px-4 py-24 md:py-32 bg-cover flex items-center">
     <div class="mx-auto w-full max-w-6xl px-6 items-center flex">
       <!-- 左側文字 -->
       <div class="grid grid-cols-1">
@@ -18,7 +16,7 @@
 
         <!-- 副標語淡入 -->
         <p class="mt-5 text-lg text-gray-600 leading-7 hero-fade hero-word-3">
-          有2年以上前端工程經驗,<br />具備使用者體驗概念以及美感的前端工程師
+          {{ text.descriptionLines[0] }}<br />{{ text.descriptionLines[1] }}
         </p>
 
         <!-- 按鈕滑入 -->
@@ -28,7 +26,7 @@
             href="assets/Resume_2026.pdf"
             download="Resume_2026.pdf"
           >
-            下載履歷
+            {{ text.downloadResume }}
           </a>
         </div>
       </div>

@@ -72,7 +72,7 @@
 .timeline-content {
   margin-top: 18px;
   width: 500px;
-  height: 380px;
+  height: 500px;
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 20px;
@@ -121,23 +121,39 @@
 }
 /* 手機版 */
 @media (max-width: 768px) {
+  .timeline-scroll {
+    overflow-x: visible;
+    overflow-y: visible;
+    padding-bottom: 0;
+  }
+
   .timeline-track {
+    display: block;
+    min-width: auto;
     padding: 8px 12px 16px;
   }
 
   .timeline-full-line {
-    left: 12px;
-    right: 12px;
-    top: 24px;
+    display: none;
   }
 
   .timeline-item {
-    width: 270px;
-    flex: 0 0 270px;
+    width: 100%;
+    flex: none;
+  }
+
+  .timeline-item + .timeline-item {
+    margin-top: 24px;
+  }
+
+  .timeline-top {
+    height: 24px;
   }
 
   .timeline-content {
-    width: 240px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     padding: 16px;
   }
 }
