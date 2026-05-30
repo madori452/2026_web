@@ -1,0 +1,113 @@
+.bg-cover {
+  background-image: url("/assets/bg/about.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.download:hover {
+  background-color: #105cff;
+  transition: 0.5s;
+  cursor: pointer;
+}
+/* =====================
+   Hero 動畫（Scroll 觸發版）
+   ===================== */
+
+/* 初始隱藏 — 移除原本直接播放的 animation，改由 class 控制 */
+.hero-word,
+.hero-reveal,
+.hero-fade,
+.hero-avatar {
+  opacity: 0;
+}
+
+/* 同上的 @keyframes，不變 */
+@keyframes heroFadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroRevealLeft {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes heroPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.35);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(99, 102, 241, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+/* 動畫只在 .hero-in-view 加上後才觸發 */
+.hero-in-view .hero-word-1 {
+  animation: heroFadeSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+}
+
+.hero-in-view .hero-word-2 {
+  animation: heroRevealLeft 0.65s cubic-bezier(0.77, 0, 0.175, 1) 0.4s forwards;
+}
+
+.hero-in-view .hero-word-3 {
+  animation: heroFadeIn 0.5s ease 0.75s forwards;
+}
+
+.hero-in-view .hero-word-4 {
+  animation: heroFadeSlideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.95s forwards;
+}
+
+.hero-in-view .hero-avatar {
+  animation:
+    heroFadeIn 0.4s ease 0.3s forwards,
+    heroFloat 3.5s ease-in-out 1s infinite,
+    heroPulse 2s ease-out 1.2s 2;
+}
+
+/* 無障礙：使用者偏好減少動態時，取消所有動畫 */
+@media (prefers-reduced-motion: reduce) {
+  .hero-word,
+  .hero-reveal,
+  .hero-fade,
+  .hero-avatar {
+    opacity: 1;
+    animation: none !important;
+    clip-path: none !important;
+    transform: none !important;
+  }
+}

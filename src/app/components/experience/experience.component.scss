@@ -1,0 +1,143 @@
+.experience-section {
+  overflow: hidden;
+}
+
+.timeline-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.timeline-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 9999px;
+}
+
+.timeline-scroll::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 9999px;
+}
+
+.timeline-track {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-width: max-content;
+  padding: 8px 16px 16px;
+  justify-content: center;
+}
+
+/* 整條橫向時間軸 */
+.timeline-full-line {
+  position: absolute;
+  top: 24px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: #d1d5db;
+  z-index: 0;
+}
+
+.timeline-item {
+  width: 550px;
+  flex: 0 0 550px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #0ea5e9;
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  margin-top: 18px;
+  width: 500px;
+  height: 380px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* 讓卡片和節點左右對齊更自然 */
+.timeline-item .timeline-content {
+  margin-left: 0;
+}
+.timeline-dot {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #0ea5e9;
+}
+
+/* 只有第一個 dot 有動畫 */
+.timeline-item--first .timeline-dot::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  z-index: -1;
+  border-radius: 999px;
+  border: 10px solid #6ba8f9;
+  animation: pulseRing 2s ease-out infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+
+  70% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+/* 手機版 */
+@media (max-width: 768px) {
+  .timeline-track {
+    padding: 8px 12px 16px;
+  }
+
+  .timeline-full-line {
+    left: 12px;
+    right: 12px;
+    top: 24px;
+  }
+
+  .timeline-item {
+    width: 270px;
+    flex: 0 0 270px;
+  }
+
+  .timeline-content {
+    width: 240px;
+    padding: 16px;
+  }
+}

@@ -1,0 +1,43 @@
+<header
+  class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-100"
+>
+  <div class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+    <!-- 左上小 icon/Logo -->
+    <a class="flex items-center gap-2" routerLink="/">
+      <img src="assets/Arco.svg" alt="logo" />
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+      @for (item of navItems; track item.id) {
+        <a
+          [href]="'#' + item.id"
+          class="transition-colors duration-200"
+          [class.text-brand-500]="activeSection === item.id"
+          [class.font-semibold]="activeSection === item.id"
+          [class.text-gray-600]="activeSection !== item.id"
+          [class.hover:text-gray-900]="activeSection !== item.id"
+        >
+          {{ item.label }}
+        </a>
+      }
+      <button
+        type="button"
+        class="px-3 py-1.5 rounded-full border border-gray-200 hover:border-gray-300 hover:bg-white text-gray-700"
+        (click)="toggleLang()"
+      >
+        {{ lang === "zh" ? "CH / EN" : "EN / CH" }}
+      </button>
+    </nav>
+
+    <!-- 手機簡化 -->
+    <div class="md:hidden text-sm text-gray-600">
+      <button
+        type="button"
+        class="px-3 py-1.5 rounded-full border border-gray-200"
+        (click)="toggleLang()"
+      >
+        {{ lang === "zh" ? "CH" : "EN" }}
+      </button>
+    </div>
+  </div>
+</header>

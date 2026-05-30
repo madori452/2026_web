@@ -1,0 +1,33 @@
+<div class="timeline-scroll mt-14">
+  <div class="timeline-track">
+    <!-- 整條時間軸 -->
+    <div class="timeline-full-line"></div>
+
+    @for (item of experiences; track item.period; let first = $first) {
+      <div class="timeline-item" [class.timeline-item--first]="first">
+        <div class="timeline-top">
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-content">
+          <p class="text-md text-sky-500 font-medium">{{ item.period }}</p>
+          <h3 class="mt-2 text-xl font-semibold text-gray-900">
+            {{ item.title }}
+          </h3>
+
+          @if (item.company) {
+            <p class="mt-1 text-lg text-gray-500">{{ item.company }}</p>
+          }
+
+          <ul class="mt-4 space-y-2">
+            @for (point of item.points; track point) {
+              <li class="flex text-md gap-2 text-sm leading-6 text-gray-600">
+                <span>{{ point }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</div>

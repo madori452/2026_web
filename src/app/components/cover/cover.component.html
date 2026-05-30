@@ -1,0 +1,50 @@
+<section #heroSection class="relative overflow-hidden">
+  <div
+    class="relative mx-auto px-4 py-24 md:py-28 bg-cover h-[600px] flex items-center"
+  >
+    <div class="mx-auto w-full max-w-6xl px-6 items-center flex">
+      <!-- 左側文字 -->
+      <div class="grid grid-cols-1">
+        <h1 class="text-3xl md:text-5xl font-semibold tracking-tight">
+          <!-- A：逐字淡入滑上 -->
+          <p class="hero-word hero-word-1" style="letter-spacing: 2px">
+            Hi, I am Tracy,
+          </p>
+          <!-- C：橫向遮罩揭幕 -->
+          <p class="hero-reveal hero-word-2 mt-2" style="letter-spacing: 2px">
+            FrontEnd Engineer
+          </p>
+        </h1>
+
+        <!-- 副標語淡入 -->
+        <p class="mt-5 text-lg text-gray-600 leading-7 hero-fade hero-word-3">
+          有2年以上前端工程經驗,<br />具備使用者體驗概念以及美感的前端工程師
+        </p>
+
+        <!-- 按鈕滑入 -->
+        <div class="mt-8 flex items-center gap-4 hero-fade hero-word-4">
+          <a
+            class="download inline-flex items-center justify-center rounded-md bg-brand-500 px-10 py-2.5 text-white shadow-soft hover:opacity-95"
+            href="assets/Resume_2026.pdf"
+            download="Resume_2026.pdf"
+          >
+            下載履歷
+          </a>
+        </div>
+      </div>
+
+      <!-- 右側頭像：D 浮動 + 光環 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 ms-auto">
+        <div
+          class="hero-avatar h-40 w-40 md:h-48 md:w-48 rounded-full bg-white shadow-soft ring-1 ring-gray-100 overflow-hidden"
+        >
+          <img
+            src="assets/header.png"
+            alt="avatar"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
