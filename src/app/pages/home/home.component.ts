@@ -15,6 +15,7 @@ import { WorksComponent } from '../../components/works/works.component';
 import { SiteFooterComponent } from '../../components/site-footer/site-footer.component';
 import { FutureComponent } from '../../components/future/future.component';
 import { AppLang, LanguageService } from '../../services/language.service';
+import { FadeInDirective } from '../../directives/fade-in.directive';
 
 @Component({
   selector: 'app-home',
@@ -28,6 +29,7 @@ import { AppLang, LanguageService } from '../../services/language.service';
     WorksComponent,
     SiteFooterComponent,
     FutureComponent,
+    FadeInDirective,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

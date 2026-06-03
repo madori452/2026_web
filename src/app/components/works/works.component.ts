@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Input } from '@angular/core';
 import { AppLang } from '../../services/language.service';
+import { FadeInDirective } from '../../directives/fade-in.directive';
 
 type WorkTab = 'system' | 'showcase';
 
@@ -16,7 +17,7 @@ type Work = {
 @Component({
   selector: 'app-works',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FadeInDirective],
   templateUrl: './works.component.html',
   styleUrl: './works.component.scss',
 })

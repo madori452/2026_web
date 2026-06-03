@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AppLang } from '../../services/language.service';
+import { FadeInDirective } from '../../directives/fade-in.directive';
 
 type ExperienceItem = {
   period: string;
@@ -11,6 +12,7 @@ type ExperienceItem = {
 @Component({
   selector: 'app-experience',
   standalone: true,
+  imports: [FadeInDirective],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss'],
 })
@@ -31,7 +33,7 @@ export class ExperienceComponent {
       },
       {
         period: '2020 - 2022',
-        title: 'UI Designer -> FrontEnd',
+        title: 'UI Designer',
         company: 'ECS 精英電腦',
         points: [
           '在公司負責新品牌「Pretso」官網的整體規劃與前端設計。',
@@ -56,7 +58,7 @@ export class ExperienceComponent {
       },
       {
         period: '2020 - 2022',
-        title: 'UI Designer -> FrontEnd',
+        title: 'UI Designer',
         company: 'ECS',
         points: [
           'Planned and designed the official website for the new in-house brand "Pretso."',

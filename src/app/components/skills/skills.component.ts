@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
 import { AppLang } from '../../services/language.service';
+import { FadeInDirective } from '../../directives/fade-in.directive';
 
 type SkillCard = {
   title: string;
@@ -10,7 +11,7 @@ type SkillCard = {
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [],
+  imports: [FadeInDirective],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
 })

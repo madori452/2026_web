@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
 import { AppLang } from '../../services/language.service';
+import { FadeInDirective } from '../../directives/fade-in.directive';
 
 @Component({
   selector: 'app-future',
   standalone: true,
-  imports: [],
+  imports: [FadeInDirective],
   templateUrl: './future.component.html',
   styleUrl: './future.component.scss',
 })

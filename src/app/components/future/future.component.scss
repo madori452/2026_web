@@ -1,0 +1,12 @@
+.future-fade-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.future-fade-on-scroll.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

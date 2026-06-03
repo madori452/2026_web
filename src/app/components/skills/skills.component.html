@@ -5,8 +5,12 @@
 </div>
 
 <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-  @for (card of cards; track card.title) {
-    <div class="rounded-xl bg-white shadow-soft p-6">
+  @for (card of cards; track card.title; let i = $index) {
+    <div
+      class="rounded-xl bg-white shadow-soft p-6 card-fade-on-scroll"
+      appFadeIn=""
+      [style.--fade-delay]="i * 220 + 'ms'"
+    >
       <h3 class="font-semibold text-xl">{{ card.title }}</h3>
       <ul class="mt-4 space-y-2 text-gray-600 text-md">
         @for (item of card.items; track item.label) {

@@ -28,7 +28,11 @@
 
 <div class="mt-14 space-y-14">
   @for (item of works; track item.title; let i = $index) {
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center works-fade-on-scroll"
+      appFadeIn
+      [style.--fade-delay]="i * 220 + 'ms'"
+    >
       <!-- 圖：偶數在左、奇數在右 -->
       <div [class.md:order-2]="i % 2 === 1" class="order-1">
         <div
