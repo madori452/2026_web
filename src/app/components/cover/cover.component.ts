@@ -30,7 +30,7 @@ export class CoverComponent implements AfterViewInit, OnDestroy {
   > = {
     zh: {
       descriptionLines: [
-        '有2年以上前端工程經驗,',
+        '有3年經驗的前端工程師,',
         '3年以上UI設計經驗,',
         '有使用者體驗概念及美感的前端工程師',
       ],
@@ -38,7 +38,7 @@ export class CoverComponent implements AfterViewInit, OnDestroy {
     },
     en: {
       descriptionLines: [
-        'Frontend engineer with 2+ years of experience,',
+        'Frontend engineer with 3+ years of experience,',
         '3+ years of UI design experience,',
         'focused on user experience and visual quality.',
       ],
