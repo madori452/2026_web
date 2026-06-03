@@ -25,7 +25,15 @@
         class="px-3 py-1.5 rounded-full border border-gray-200 hover:border-gray-300 hover:bg-white text-gray-700"
         (click)="toggleLang()"
       >
-        {{ lang === "zh" ? "CH / EN" : "EN / CH" }}
+        @if (activeEn) {
+          <span :[class.text-brand-500]="activeEn"> EN </span>
+          <span>/</span>
+          <span :[class.text-gray-400]="activeEn"> CH </span>
+        } @else {
+          <span :[class.text-brand-500]="!activeEn"> CH </span>
+          <span>/</span>
+          <span :[class.text-gray-400]="!activeEn"> EN </span>
+        }
       </button>
     </nav>
 

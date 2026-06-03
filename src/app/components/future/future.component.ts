@@ -15,7 +15,7 @@ export class FutureComponent {
   private readonly textMap: Record<AppLang, { title: string; body: string[] }> =
     {
       zh: {
-        title: '關於未來',
+        title: 'About the Future',
         body: [
           '這些年持續投入於前端系統開發，從介面實作到系統整合，累積了實務經驗與對產品穩定性的重視。',
           '未來期望持續精進前端架構、效能與使用者體驗，在團隊中創造長期且可維護的價值。',
@@ -24,8 +24,11 @@ export class FutureComponent {
       en: {
         title: 'Looking Ahead',
         body: [
-          'Over the past few years, I have stayed focused on frontend product development, from UI implementation to system integration, while building hands-on experience and a strong commitment to product stability.',
-          'Going forward, I aim to keep improving frontend architecture, performance, and user experience, and to create long-term, maintainable value within the team.',
+          'Over the past few years, I have stayed focused on frontend product development,',
+          'from UI implementation to system integration,',
+          'while building hands-on experience and a strong commitment to product stability.',
+          'Going forward, I aim to keep improving frontEnd architecture, performance, and user experience,',
+          'to create long-term and maintainable value within the team.',
         ],
       },
     };

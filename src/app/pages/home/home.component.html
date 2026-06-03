@@ -25,5 +25,16 @@
     <app-future [lang]="lang"></app-future>
   </section>
 
+  <button
+    type="button"
+    class="back-to-top"
+    [class.back-to-top--visible]="showBackToTop"
+    [attr.aria-hidden]="!showBackToTop"
+    (click)="scrollToTop()"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
   <app-site-footer [lang]="lang"></app-site-footer>
 </div>

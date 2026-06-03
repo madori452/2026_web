@@ -1,8 +1,10 @@
 <section #heroSection class="relative">
   <div class="relative mx-auto px-4 py-24 md:py-32 bg-cover flex items-center">
-    <div class="mx-auto w-full max-w-6xl px-6 items-center flex">
+    <div
+      class="mx-auto flex w-full max-w-6xl flex-col px-6 md:flex-row md:items-center"
+    >
       <!-- 左側文字 -->
-      <div class="grid grid-cols-1">
+      <div class="order-2 grid grid-cols-1 md:order-1">
         <h1 class="text-3xl md:text-5xl font-semibold tracking-tight">
           <!-- A：逐字淡入滑上 -->
           <p class="hero-word hero-word-1" style="letter-spacing: 2px">
@@ -15,8 +17,13 @@
         </h1>
 
         <!-- 副標語淡入 -->
-        <p class="mt-5 text-lg text-gray-600 leading-7 hero-fade hero-word-3">
-          {{ text.descriptionLines[0] }}<br />{{ text.descriptionLines[1] }}
+
+        <p
+          class="mt-5 text-lg text-gray-600 leading-7 hero-fade hero-word-3 md:text-md"
+        >
+          {{ text.descriptionLines[0] }}<br />{{ text.descriptionLines[1]
+          }}<br />
+          {{ text.descriptionLines[2] }}
         </p>
 
         <!-- 按鈕滑入 -->
@@ -32,9 +39,11 @@
       </div>
 
       <!-- 右側頭像：D 浮動 + 光環 -->
-      <div class="grid grid-cols-1 md:grid-cols-2 ms-auto">
+      <div
+        class="order-1 mb-10 grid grid-cols-1 justify-items-center md:order-2 md:mb-0 md:mt-0 md:ms-auto md:grid-cols-2"
+      >
         <div
-          class="hero-avatar h-40 w-40 md:h-48 md:w-48 rounded-full bg-white shadow-soft ring-1 ring-gray-100 overflow-hidden"
+          class="hero-avatar h-40 w-40 md:h-52 md:w-52 rounded-full bg-white shadow-soft ring-1 ring-gray-100 overflow-hidden"
         >
           <img
             src="assets/header.png"

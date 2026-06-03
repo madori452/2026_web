@@ -31,13 +31,15 @@ export class CoverComponent implements AfterViewInit, OnDestroy {
     zh: {
       descriptionLines: [
         '有2年以上前端工程經驗,',
-        '具備使用者體驗概念以及美感的前端工程師',
+        '3年以上UI設計經驗,',
+        '有使用者體驗概念及美感的前端工程師',
       ],
       downloadResume: '下載履歷',
     },
     en: {
       descriptionLines: [
         'Frontend engineer with 2+ years of experience,',
+        '3+ years of UI design experience,',
         'focused on user experience and visual quality.',
       ],
       downloadResume: 'Download Resume',
@@ -48,6 +50,10 @@ export class CoverComponent implements AfterViewInit, OnDestroy {
 
   get text() {
     return this.textMap[this.lang];
+  }
+
+  get mobileDescription(): string {
+    return this.text.descriptionLines.join(' ');
   }
 
   ngAfterViewInit(): void {

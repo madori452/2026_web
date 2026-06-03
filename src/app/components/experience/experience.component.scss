@@ -72,12 +72,21 @@
 .timeline-content {
   margin-top: 18px;
   width: 500px;
-  height: 500px;
+  height: auto;
+  min-height: 500px;
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.timeline-content--zh {
+  min-height: 350px;
+}
+
+.timeline-content--en {
+  min-height: 560px;
 }
 
 /* 讓卡片和節點左右對齊更自然 */
@@ -154,6 +163,7 @@
     width: 100%;
     max-width: 100%;
     height: auto;
+    min-height: 0;
     padding: 16px;
   }
 }

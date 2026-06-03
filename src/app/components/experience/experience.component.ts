@@ -25,11 +25,8 @@ export class ExperienceComponent {
         company: '勤崴國際',
         points: [
           '負責車隊管理平台前端系統維護與功能開發。',
-          '參與中興保全 機版車隊管理系統前端開發，包含車輛即時監控、影像串接與報表功能。',
-          '負責既有系統由Vue 2轉換至Angular的前端架構重整。',
-          '導入KW Map作為地圖底圖，重新規劃地圖功能與操作流程。',
-          '使用OpenLayers、ECharts等技術開發地圖監控與資料視覺化功能。',
-          '參與介面設計與使用者體驗優化，提升系統操作流程與畫面呈現。',
+          '參與中興保全 機版車隊管理系統前端開發，包含車輛即時監控、影像串接與報表功能。負責既有系統由Vue 2轉換至Angular的前端架構重整。',
+          '導入KW Map作為地圖底圖，重新規劃地圖功能與操作流程。使用OpenLayers、ECharts等技術開發地圖監控與資料視覺化功能並且參與介面設計與使用者體驗優化，提升系統操作流程與畫面呈現。',
         ],
       },
       {
@@ -46,7 +43,7 @@ export class ExperienceComponent {
     en: [
       {
         period: '2023 - Now',
-        title: 'Frontend Engineer',
+        title: 'FrontEnd Engineer',
         company: 'Kingwaytek',
         points: [
           'Responsible for maintenance and feature development of a fleet management frontend platform.',
@@ -59,7 +56,7 @@ export class ExperienceComponent {
       },
       {
         period: '2020 - 2022',
-        title: 'UI Designer -> Frontend',
+        title: 'UI Designer -> FrontEnd',
         company: 'ECS',
         points: [
           'Planned and designed the official website for the new in-house brand "Pretso."',

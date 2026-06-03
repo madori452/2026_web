@@ -9,7 +9,11 @@
           <div class="timeline-dot"></div>
         </div>
 
-        <div class="timeline-content">
+        <div
+          class="timeline-content"
+          [class.timeline-content--zh]="lang === 'zh'"
+          [class.timeline-content--en]="lang === 'en'"
+        >
           <p class="text-md text-sky-500 font-medium">{{ item.period }}</p>
           <h3 class="mt-2 text-xl font-semibold text-gray-900">
             {{ item.title }}

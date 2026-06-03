@@ -13,6 +13,7 @@ export class SiteHeaderComponent {
   private readonly sectionIds = ['experience', 'skills', 'works'];
 
   activeSection = 'experience';
+  activeEn: boolean = this.languageService.lang === 'en';
   private readonly navLabels: Record<AppLang, { id: string; label: string }[]> =
     {
       zh: [
@@ -39,6 +40,7 @@ export class SiteHeaderComponent {
     if (isPlatformBrowser(this.platformId)) {
       this.updateActiveSection();
     }
+    console.log('SiteHeaderComponent initialized with lang:', this.activeEn);
   }
 
   @HostListener('window:scroll')
@@ -50,6 +52,8 @@ export class SiteHeaderComponent {
 
   toggleLang() {
     this.languageService.toggleLang();
+    this.activeEn = this.languageService.lang === 'en';
+    console.log('Language toggled. Current lang:', this.activeEn);
   }
 
   private updateActiveSection() {
