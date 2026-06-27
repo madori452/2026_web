@@ -30,17 +30,16 @@ export class CoverComponent implements AfterViewInit, OnDestroy {
   > = {
     zh: {
       descriptionLines: [
-        '有3年經驗的前端工程師,',
-        '3年以上UI設計經驗,',
-        '有使用者體驗概念及美感的前端工程師',
+        '具備3年前端工程經驗與UI設計背景，',
+        '兼具設計美感與前端技術的工程師。',
       ],
       downloadResume: '下載履歷',
     },
     en: {
       descriptionLines: [
         'Frontend engineer with 3+ years of experience,',
-        '3+ years of UI design experience,',
-        'focused on user experience and visual quality.',
+        'UI design experience,',
+        'combining design aesthetics with front-end technology.',
       ],
       downloadResume: 'Download Resume',
     },

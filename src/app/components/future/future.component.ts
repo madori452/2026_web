@@ -18,18 +18,20 @@ export class FutureComponent {
       zh: {
         title: 'About the Future',
         body: [
-          '這些年持續投入於前端系統開發，從介面實作到系統整合，累積了實務經驗與對產品穩定性的重視。',
-          '未來期望持續精進前端架構、效能與使用者體驗，在團隊中創造長期且可維護的價值。',
+          '這些年來我從前端設計師出發，透過自學程式語言與經驗累積，逐步轉職為前端工程師。',
+          '我知道仍有許多需要學習與精進的地方，也了解非本科背景需要投入更多時間與努力。',
+          '我期許自己能持續提升前端技術能力，並結合過去在UI設計與前端開發上的雙重經驗， ',
+          '在工作中發揮所長，打造兼具功能性、使用體驗與視覺品質的產品。',
         ],
       },
       en: {
         title: 'Looking Ahead',
         body: [
-          'Over the past few years, I have stayed focused on frontend product development,',
-          'from UI implementation to system integration,',
-          'while building hands-on experience and a strong commitment to product stability.',
-          'Going forward, I aim to keep improving frontEnd architecture, performance, and user experience,',
-          'to create long-term and maintainable value within the team.',
+          'My journey began as a UI/Frontend Designer, and through self-learning and practical experience,',
+          'I gradually transitioned into a Frontend Engineer. Although I know there is still much to learn,',
+          'I believe my background in design gives me a unique perspective when building frontend products.',
+          'Moving forward, I hope to continue improving my technical skills while combining my design experience with frontend development.',
+          'I aim to create products that are not only functional,but also thoughtful,intuitive, and user-friendly.',
         ],
       },
     };
