@@ -20,6 +20,17 @@
   opacity: 0;
 }
 
+.hero-typing {
+  display: inline-block;
+  width: calc(var(--type-ch) * 1ch);
+  overflow: hidden;
+  white-space: nowrap;
+  height: 56px;
+  clip-path: inset(0 100% 0 0);
+  border-right: 2px solid currentColor;
+  will-change: clip-path, opacity;
+}
+
 /* 同上的 @keyframes，不變 */
 @keyframes heroFadeSlideUp {
   from {
@@ -50,6 +61,32 @@
   }
 }
 
+@keyframes heroTyping {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes heroCaretBlink {
+  0%,
+  49% {
+    border-right-color: currentColor;
+  }
+  50%,
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes heroCaretHide {
+  to {
+    border-right-color: transparent;
+  }
+}
+
 @keyframes heroFloat {
   0%,
   100% {
@@ -74,11 +111,19 @@
 
 /* 動畫只在 .hero-in-view 加上後才觸發 */
 .hero-in-view .hero-word-1 {
-  animation: heroFadeSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+  animation:
+    heroFadeIn 0.01s linear 0.1s forwards,
+    heroTyping 1s steps(15, end) 0.1s forwards,
+    heroCaretBlink 0.75s step-end 0.1s 2,
+    heroCaretHide 0.01s linear 1.15s forwards;
 }
 
 .hero-in-view .hero-word-2 {
-  animation: heroRevealLeft 0.65s cubic-bezier(0.77, 0, 0.175, 1) 0.4s forwards;
+  animation:
+    heroFadeIn 0.01s linear 1.3s forwards,
+    heroTyping 1.1s steps(17, end) 1.3s forwards,
+    heroCaretBlink 0.75s step-end 1.3s 2,
+    heroCaretHide 0.01s linear 2.45s forwards;
 }
 
 .hero-in-view .hero-word-3 {
@@ -95,7 +140,11 @@
     heroFloat 3.5s ease-in-out 1s infinite,
     heroPulse 2s ease-out 1.2s 2;
 }
-
+@media (max-width: 420px) {
+  .hero-typing {
+    height: 40px;
+  }
+}
 /* 無障礙：使用者偏好減少動態時，取消所有動畫 */
 @media (prefers-reduced-motion: reduce) {
   .hero-word,
@@ -106,5 +155,12 @@
     animation: none !important;
     clip-path: none !important;
     transform: none !important;
+  }
+
+  .hero-typing {
+    width: auto;
+    overflow: visible;
+    clip-path: none;
+    border-right: none;
   }
 }
